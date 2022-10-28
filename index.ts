@@ -12,6 +12,7 @@ import cors from 'cors'
 
 
 import UserRoutes from './routers/userRouter'
+import AuthRoutes from './routers/AuthRouter'
 dotenv.config();
 
 class App{
@@ -39,6 +40,8 @@ class App{
 
 
     this.app.use("/users", UserRoutes)
+
+    this.app.use("/auth", AuthRoutes)
   }
 }
 

@@ -3,16 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = require("express");
+const BaseRouter_1 = __importDefault(require("./BaseRouter"));
 const AuthController_1 = __importDefault(require("../controllers/AuthController"));
-class UserRoutes {
-    constructor() {
-        this.router = (0, express_1.Router)();
-        this.routes();
-    }
+class AuthRoutes extends BaseRouter_1.default {
     routes() {
         this.router.post("/register", AuthController_1.default.register);
         this.router.post("/login", AuthController_1.default.login);
     }
 }
-exports.default = new UserRoutes().router;
+exports.default = new AuthRoutes().router;

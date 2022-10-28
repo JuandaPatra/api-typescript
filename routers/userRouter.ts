@@ -1,7 +1,5 @@
-import {Router, Request, Response} from 'express'
-// import IRouter from './RouterInterface'
-
 import BaseRouter from './BaseRouter';
+
 import UserController from '../controllers/UserController';
 
 class UserRoutes extends BaseRouter{

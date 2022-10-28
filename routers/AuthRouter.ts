@@ -1,14 +1,7 @@
-import {Router, Request, Response} from 'express'
-import IRouter from './RouterInterface'
+import BaseRouter from './BaseRouter';
 import AuthController from '../controllers/AuthController'
 
-class UserRoutes implements IRouter{
-    public router : Router;
-
-    constructor(){
-        this.router = Router();
-        this.routes();
-    }
+class AuthRoutes extends BaseRouter{
 
     public routes(): void{
 
@@ -18,4 +11,4 @@ class UserRoutes implements IRouter{
     }
 }
 
-export default new UserRoutes().router
+export default new AuthRoutes().router;

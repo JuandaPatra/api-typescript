@@ -12,6 +12,7 @@ const compression_1 = __importDefault(require("compression"));
 const helmet_1 = __importDefault(require("helmet"));
 const cors_1 = __importDefault(require("cors"));
 const userRouter_1 = __importDefault(require("./routers/userRouter"));
+const AuthRouter_1 = __importDefault(require("./routers/AuthRouter"));
 dotenv_1.default.config();
 class App {
     constructor() {
@@ -32,6 +33,7 @@ class App {
             res.send('⚡️Express + TypeScript Server');
         });
         this.app.use("/users", userRouter_1.default);
+        this.app.use("/auth", AuthRouter_1.default);
     }
 }
 const port = process.env.PORT;
