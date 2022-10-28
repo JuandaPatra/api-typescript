@@ -2,10 +2,12 @@ import BaseRouter from './BaseRouter';
 
 import UserController from '../controllers/UserController';
 
+import {auth} from '../middleware/AuthMiddleware'
+
 class UserRoutes extends BaseRouter{
 
     public routes(): void{
-        this.router.get("/", UserController.index);
+        this.router.get("/", auth, UserController.index);
 
         this.router.post("/", UserController.create);
 
